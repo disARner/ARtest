@@ -1,2 +1,2 @@
 # ARtest
-AR testing
+For AR testing purpose before integrating with main App
