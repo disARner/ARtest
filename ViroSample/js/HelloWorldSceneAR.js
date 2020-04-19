@@ -27,9 +27,6 @@ import {
 ViroMaterials.createMaterials({
   grid: {
     diffuseTexture: require('./res/grid_bg.jpg')
-  },
-  test: {
-    diffuseTexture: {uri:"https://lh3.googleusercontent.com/proxy/clxMaVAUQFYE_rWeutTVTujXbLY6ygyP8-FXNG0c8kB75dYGp2LyzZmeMKtjnaDjJAtifhpe-6jYD54RSQLRQ1aERhIhBZA"}
   }
 })
 
@@ -45,10 +42,13 @@ ViroAnimations.registerAnimations({
 ViroARTrackingTargets.createTargets({
   "targetOne" : {
     source : require('./res/test3.arobject'),
-    // orientation : "Up",
-    // physicalWidth : 0.1 // real world width in meters
     type: "Object"
   },
+  "tesla": {
+    source: require('./res/tesla.jpg'),
+    orientation : "Up",
+    physicalWidth : 0.1 // real world width in meters
+  }
 });
 
 
@@ -91,17 +91,18 @@ function HelloWorldSceneAR() {
             position={[0, 1, -2]}
             scale={[0.5, 0.5, 0.5]}
         />
-        <ViroNode position={[0,-1,0]} dragType="FixedToWorld" onDrag={()=>{}} >
-            <Viro3DObject
-                source={require('./res/polo_shirt/13647_Polo_Team_Shirt_v2_L3.obj')}
-                resources={[require('./res/polo_shirt/13647_Polo_Team_Shirt_v2_L3.mtl'),
-                require('./res/polo_shirt/13647PoloTeamShirt_cloth_diffuse.jpg')]}
-                position={[1, .25, -1]}
-                scale={[.02, .02, .02]}
-                rotation={[90, 180, 180]}
-                materials={["test"]}
-                type="OBJ" />
-        </ViroNode>
+        <ViroARImageMarker target={"tesla"}>
+          <ViroNode position={[0,-1,0]} dragType="FixedToWorld" onDrag={()=>{}} >
+              <Viro3DObject
+                  source={require('./res/polo_shirt/13647_Polo_Team_Shirt_v2_L3.obj')}
+                  resources={[require('./res/polo_shirt/13647_Polo_Team_Shirt_v2_L3.mtl'),
+                  require('./res/polo_shirt/13647PoloTeamShirt_cloth_diffuse.jpg')]}
+                  position={[1, .25, -1]}
+                  scale={[.02, .02, .02]}
+                  rotation={[90, 180, 180]}
+                  type="OBJ" />
+          </ViroNode>
+        </ViroARImageMarker>
         {/* <ViroARObjectMarker target={"targetOne"} >
           <ViroNode position={[0,-1,0]} dragType="FixedToWorld" onDrag={()=>{}} >
             <Viro3DObject
