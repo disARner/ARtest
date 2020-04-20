@@ -8,6 +8,7 @@
  */
 
 import React, { useState } from 'react';
+
 import {
   AppRegistry,
   Text,
@@ -15,6 +16,7 @@ import {
   StyleSheet,
   PixelRatio,
   TouchableHighlight,
+  SafeAreaView,
 } from 'react-native';
 
 import {
@@ -86,8 +88,13 @@ function ViroSample () {
   // Returns the ViroARSceneNavigator which will start the AR experience
   function _getARNavigator () {
     return (
-      <ViroARSceneNavigator {...sharedProps}
-        initialScene={{scene: InitialARScene}} />
+      <>
+          <ViroARSceneNavigator {...sharedProps}
+            initialScene={{scene: InitialARScene}}/>
+          <Text style={{ backgroundColor: 'red', position: 'absolute',bottom: 10, margin: 10}}>
+            Back Button
+          </Text>
+      </>
     );
   }
   
