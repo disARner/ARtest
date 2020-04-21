@@ -73,13 +73,6 @@ function ViroSample () {
 
             <Text style={localStyles.buttonText}>AR</Text>
           </TouchableHighlight>
-
-          <TouchableHighlight style={localStyles.buttons}
-            onPress={_getExperienceButtonOnPress(VR_NAVIGATOR_TYPE)}
-            underlayColor={'#68a0ff'} >
-
-            <Text style={localStyles.buttonText}>VR</Text>
-          </TouchableHighlight>
         </View>
       </View>
     );
