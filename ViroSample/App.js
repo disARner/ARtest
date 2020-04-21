@@ -64,12 +64,12 @@ function ViroSample () {
         <View style={localStyles.inner} >
 
           <Text style={localStyles.titleText}>
-            Choose your desired experience:
+            Welcome to disARner:
           </Text>
 
           <TouchableHighlight style={localStyles.buttons}
             onPress={_getExperienceButtonOnPress(AR_NAVIGATOR_TYPE)}
-            underlayColor={'#68a0ff'} >
+            underlayColor={'#000'} >
 
             <Text style={localStyles.buttonText}>AR</Text>
           </TouchableHighlight>
@@ -123,26 +123,26 @@ function ViroSample () {
 const localStyles = StyleSheet.create({
   viroContainer :{
     flex : 1,
-    backgroundColor: "black",
+    backgroundColor: "#F5FCFF",
   },
   outer : {
     flex : 1,
     flexDirection: 'row',
     alignItems:'center',
-    backgroundColor: "black",
+    backgroundColor: "#F5FCFF",
   },
   inner: {
     flex : 1,
     flexDirection: 'column',
     alignItems:'center',
-    backgroundColor: "black",
+    backgroundColor: "#F5FCFF",
   },
   titleText: {
     paddingTop: 30,
-    paddingBottom: 20,
-    color:'#fff',
+    paddingBottom: 50,
+    color:'#000',
     textAlign:'center',
-    fontSize : 25
+    fontSize : 30
   },
   buttonText: {
     color:'#fff',
@@ -156,7 +156,7 @@ const localStyles = StyleSheet.create({
     paddingBottom:20,
     marginTop: 10,
     marginBottom: 10,
-    backgroundColor:'#68a0cf',
+    backgroundColor:'#000',
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#fff',
